@@ -23,7 +23,7 @@ This project shows practical use of HTML, CSS, and JavaScript.
 ## Files
 
 - `index.html` - the full one-page CV site.
-- `assets/colors.css` - the project color variables.
-- `assets/styles.css` - the main styling for layout and components.
-- `assets/ClaraVanBiljon_Portrait.jpg` - profile photo used in the sidebar.
-- `assets/Clara van Biljon_CV.pdf` - downloadable CV.
+- `colors.css` - the project color variables.
+- `styles.css` - the main styling for layout and components.
+- `Assets/ClaraVanBiljon_Portrait.jpg` - profile photo used in the sidebar.
+- `Assets/Clara van Biljon_CV.pdf` - downloadable CV.
