@@ -492,6 +492,7 @@ section:last-child {
   align-items: center;
   gap: 8px;
   text-decoration: none;
+}
   color: var(--color-text);
   font-size: 13px;
   font-weight: 600;
@@ -519,6 +520,31 @@ section:last-child {
 
 .note-card strong {
   color: var(--color-text);
+}
+
+.exp-summary-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+
+.exp-summary-card strong {
+  margin-right: 2px;
+}
+
+.exp-toggle-btn {
+  margin-left: auto;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  color: var(--color-heading-2);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.exp-toggle-btn:hover {
+  background: var(--color-hover);
 }
 
 .contact-cta {

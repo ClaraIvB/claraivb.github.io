@@ -1,26 +1,29 @@
 # Clara van Biljon Virtual CV
 
-This repository contains a static virtual CV / portfolio site for Clara van Biljon, built for GitHub Pages.
+Live website: [https://claraivb.github.io](https://claraivb.github.io)
 
-## What It Includes
+## Project Overview
 
-- A responsive personal profile page with portrait, contact details, skills, education, and experience.
-- A projects section that highlights the portfolio itself and links to the source repository.
-- A downloadable CV stored in the `assets/` folder.
-- Mobile-friendly layout, smooth navigation, and simple visual styling using HTML and CSS.
+This is a static virtual CV and portfolio site built for GitHub Pages. It presents Clara van Biljon’s profile, experience, skills, education, projects, and contact details in a single responsive page.
+
+## Coding Skills Used
+
+This project shows practical use of HTML, CSS, and JavaScript.
+
+- HTML was used to structure the content semantically with sections for experience, projects, education, and contact details. That makes the page easier to read, maintain, and navigate.
+- CSS was used to control the layout, spacing, typography, and color scheme. The design is responsive so it works on both desktop and mobile screens, and the styling gives the page a clean portfolio look.
+- JavaScript was used for the expandable experience content, letting the page toggle between the main timeline and the additional patient-file migration card without loading a separate page.
+
+## Rubric Alignment
+
+- The page is organized clearly so information is easy to find.
+- The layout is responsive and works across screen sizes.
+- The site combines content, styling, and interaction to show both design and coding ability.
 
 ## Files
 
 - `index.html` - the full one-page CV site.
+- `assets/colors.css` - the project color variables.
+- `assets/styles.css` - the main styling for layout and components.
 - `assets/ClaraVanBiljon_Portrait.jpg` - profile photo used in the sidebar.
 - `assets/Clara van Biljon_CV.pdf` - downloadable CV.
-
-## Local Preview
-
-Open `index.html` in a browser, or publish the repository through GitHub Pages to host it online.
-
-## Editing Notes
-
-- Update contact information, experience, and project links directly in `index.html`.
-- Keep filenames in `assets/` unchanged unless you also update the references in the HTML.
-- If you add more projects, mirror the format used in the Projects section so each entry stays concise and easy to scan.

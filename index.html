@@ -132,6 +132,15 @@
             <div class="tl-tags"><span>Angular</span><span>HTML</span><span>CSS</span><span>Graphic Design</span></div>
           </div>
 
+          <div class="tl-item" id="patient-file-card" hidden>
+            <p class="tl-date">March 2026 — May 2026</p>
+            <p class="tl-role">Patient file migration support</p>
+            <p class="tl-org">Dr Le Roux Ortho</p>
+            <ul>
+              <li>Helped move patient files to a new system.</li>
+            </ul>
+          </div>
+
           <div class="tl-item">
             <p class="tl-date">February 2025</p>
             <p class="tl-role">Student Vacation Worker — PAS</p>
@@ -153,8 +162,9 @@
           </div>
         </div>
 
-        <div class="note-card">
+        <div class="note-card exp-summary-card">
           <strong>Also on record:</strong> migrated patient files to a new information system, plus sales and customer service experience across several companies.
+          <button type="button" class="exp-toggle-btn" id="exp-toggle-btn" aria-controls="patient-file-card" aria-expanded="false">Expanded experience</button>
         </div>
       </section>
 
@@ -220,6 +230,20 @@
   </div>
 
   <p class="page-footer">Centurion, Pretoria · built &amp; maintained by Clara van Biljon</p>
+
+  <script>
+    const expToggleButton = document.getElementById('exp-toggle-btn');
+    const patientFileCard = document.getElementById('patient-file-card');
+
+    if (expToggleButton && patientFileCard) {
+      expToggleButton.addEventListener('click', () => {
+        const isExpanded = !patientFileCard.hidden;
+        patientFileCard.hidden = isExpanded;
+        expToggleButton.setAttribute('aria-expanded', String(!isExpanded));
+        expToggleButton.textContent = isExpanded ? 'Expanded experience' : 'Relevant experience';
+      });
+    }
+  </script>
 
 </body>
 </html>
