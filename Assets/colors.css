@@ -3,18 +3,18 @@
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --serif: 'Fraunces', Georgia, serif;
   --color-background: #fef8ec;
-  --color-surface: #f8ecd2;
-  --color-surface-alt: #fff7e8;
-  --color-primary: #526d8a;
-  --color-primary-soft: #526d8a22;
-  --color-accent: #6e7258;
-  --color-accent-dark: #5c6049;
+  --color-surface: #eed8b9;
+  --color-surface-alt: #eed8b9;
+  --color-heading-2: #526d8a;
+  --color-sidebar: #6e7258;
+  --color-heading-1: #af4f4b;
+  --color-line: #9d7055;
+  --color-hover: #526d8a22;
   --color-text: #2f2b22;
   --color-text-muted: #4a4638;
   --color-text-subtle: #5b5748;
   --color-text-secondary: #6b6656;
   --color-text-tertiary: #8a8570;
-  --color-line: #e2d6b7;
   --color-white: #ffffff;
   --color-white-soft: #fef8ec;
   --color-white-soft-55: #fef8ec55;
@@ -24,5 +24,4 @@
   --color-white-soft-d0: #fef8ecd0;
   --color-white-soft-b0: #fef8ecb0;
   --color-white-soft-dd: #fef8ecdd;
-  --color-border-hover: #c7d5e4;
 }
