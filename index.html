@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clara van Biljon — Information Technology Student</title>
+<meta name="description" content="Virtual CV of Clara van Biljon, Information Technology student at NWU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fef8ec;
+    --cream-deep:#f8ecd2;
+    --olive:#6e7258;
+    --olive-deep:#5c6049;
+    --blue:#526d8a;
+    --blue-soft:#526d8a22;
+    --ink:#2f2b22;
+    --line:#e2d6b7;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif:'Fraunces', Georgia, serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--blue); outline-offset:3px;}
+
+  /* ---------- top nav ---------- */
+  .topnav{
+    position:sticky;
+    top:0;
+    z-index:30;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:1120px;
+    margin:0 auto;
+    padding:14px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .topnav-brand{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:18px;
+    text-decoration:none;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .topnav-links{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    list-style:none;
+    margin:0; padding:0;
+    flex-wrap:wrap;
+  }
+  .topnav-links a{
+    text-decoration:none;
+    color:var(--ink);
+    font-size:14px;
+    font-weight:500;
+    padding:8px 14px;
+    border-radius:20px;
+    transition:background .15s ease, color .15s ease;
+  }
+  .topnav-links a:hover{background:var(--blue-soft); color:var(--blue);}
+  .btn-download{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:var(--blue);
+    color:var(--cream) !important;
+    font-size:13.5px;
+    font-weight:600;
+    padding:9px 16px;
+    border-radius:20px;
+    white-space:nowrap;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .btn-download:hover{background:var(--olive-deep); transform:translateY(-1px);}
+  .btn-download svg{width:14px; height:14px;}
+  @media (max-width:860px){
+    .topnav-links{display:none;}
+  }
+
+  /* ---------- layout ---------- */
+  .layout{
+    display:flex;
+    align-items:stretch;
+    max-width:1120px;
+    margin:0 auto;
+  }
+  @media (max-width:820px){
+    .layout{flex-direction:column;}
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    flex:0 0 300px;
+    background:var(--olive);
+    color:var(--cream);
+    padding:44px 30px 60px;
+  }
+  .photo-frame{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    padding:6px;
+    background:var(--cream);
+    margin:0 auto 26px;
+  }
+  .photo-frame img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+  }
+  .side-h{
+    font-family:var(--serif);
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--cream);
+    border-bottom:1px solid #fef8ec55;
+    padding-bottom:8px;
+    margin:0 0 14px;
+  }
+  .side-block{margin-bottom:34px;}
+  .side-block:last-child{margin-bottom:0;}
+
+  .contact-list{list-style:none; margin:0; padding:0;}
+  .contact-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:13.5px;
+    margin-bottom:12px;
+    color:#fef8ecf0;
+  }
+  .contact-list li:last-child{margin-bottom:0;}
+  .contact-list svg{width:15px; height:15px; flex:none; margin-top:2px; opacity:0.9;}
+  .contact-list a{text-decoration:none; word-break:break-word;}
+  .contact-list a:hover{text-decoration:underline;}
+
+  .edu-item{margin-bottom:18px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-item .deg{font-weight:600; font-size:14px; margin:0 0 2px;}
+  .edu-item .sch{font-size:13px; color:#fef8ecd0; margin:0 0 2px;}
+  .edu-item .yr{font-size:12px; color:#fef8ecb0; margin:0;}
+  .edu-item .gpa-tag{
+    display:inline-block;
+    margin-top:6px;
+    font-size:11.5px;
+    font-weight:600;
+    background:#fef8ec22;
+    padding:2px 8px;
+    border-radius:10px;
+  }
+
+  .skill-tags{display:flex; flex-wrap:wrap; gap:7px;}
+  .skill-tags span{
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:14px;
+    background:#fef8ec1e;
+    border:1px solid #fef8ec3d;
+  }
+
+  .soft-tags{list-style:none; margin:0; padding:0; font-size:13.5px;}
+  .soft-tags li{padding:4px 0; color:#fef8ecf0;}
+  .soft-tags li::before{content:"◦ "; color:var(--cream);}
+
+  /* ---------- main content ---------- */
+  .main{
+    flex:1;
+    min-width:0;
+    padding:52px 44px 80px;
+  }
+  @media (max-width:600px){
+    .main{padding:40px 24px 60px;}
+    .sidebar{padding:36px 24px 44px;}
+  }
+
+  .kicker{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin:0 0 8px;
+  }
+  h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(32px, 5vw, 46px);
+    line-height:1.08;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .lede{
+    font-size:16px;
+    max-width:560px;
+    color:#4a4638;
+    margin:0 0 40px;
+  }
+
+  section{
+    margin-bottom:52px;
+    scroll-margin-top:90px;
+  }
+  section:last-child{margin-bottom:0;}
+
+  .sec-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:22px;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    font-size:22px;
+    font-weight:700;
+    margin:0;
+    color:var(--ink);
+  }
+  .sec-rule{
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  /* timeline */
+  .timeline{
+    position:relative;
+    padding-left:28px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:6px;
+    top:6px;
+    bottom:6px;
+    width:2px;
+    background:var(--line);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:32px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:4px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:var(--cream);
+    border:3px solid var(--blue);
+  }
+  .tl-date{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--blue);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0 0 4px;
+  }
+  .tl-role{
+    font-family:var(--serif);
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 2px;
+    color:var(--ink);
+  }
+  .tl-org{
+    font-size:13.5px;
+    color:#6b6656;
+    margin:0 0 10px;
+  }
+  .tl-item ul{margin:0 0 10px; padding-left:18px;}
+  .tl-item li{font-size:14.5px; margin-bottom:4px;}
+  .tl-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .tl-tags span{
+    font-size:11.5px;
+    color:var(--blue);
+    background:var(--blue-soft);
+    padding:3px 9px;
+    border-radius:12px;
+  }
+
+  .note-card{
+    margin-top:26px;
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px;
+    font-size:14px;
+    color:#5b5748;
+  }
+  .note-card strong{color:var(--ink);}
+
+  .contact-cta{
+    background:var(--olive);
+    color:var(--cream);
+    border-radius:10px;
+    padding:32px 34px;
+  }
+  .contact-cta h2{
+    font-family:var(--serif);
+    margin:0 0 8px;
+    font-size:22px;
+    color:var(--cream);
+  }
+  .contact-cta p{
+    margin:0 0 20px;
+    font-size:14.5px;
+    color:#fef8ecdd;
+    max-width:460px;
+  }
+  .cta-links{display:flex; flex-wrap:wrap; gap:12px;}
+  .cta-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:var(--cream);
+    font-size:13.5px;
+    font-weight:500;
+    border:1px solid #fef8ec55;
+    padding:9px 15px;
+    border-radius:20px;
+    transition:background .15s ease;
+  }
+  .cta-links a:hover{background:#fef8ec22;}
+  .cta-links svg{width:14px; height:14px;}
+
+  .page-footer{
+    text-align:center;
+    padding:26px 20px 40px;
+    font-size:12px;
+    color:#8a8570;
+  }
+</style>
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a class="topnav-brand" href="#top">Clara van Biljon</a>
+      <ul class="topnav-links">
+        <li><a href="#top">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn-download" href="Clara_van_Biljon_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        Download CV
+      </a>
+    </div>
+  </nav>
+
+  <div class="layout" id="top">
+
+    <aside class="sidebar">
+      <div class="photo-frame">
+        <img src="assets/clara-photo.png" alt="Portrait of Clara van Biljon">
+      </div>
+
+      <div class="side-block">
+        <p class="side-h">Contact</p>
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:+27843024054">084 302 4054</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+            <a href="mailto:claravanbiljon@gmail.com">claravanbiljon@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">Clara van Biljon</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.9-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            <a href="https://github.com/ClaraIvB" target="_blank" rel="noopener">ClaraIvB</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.5 0 6 3.5 4 7.5C19 16.65 12 21 12 21z"/></svg>
+            <span>Centurion, Pretoria</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="side-block" id="education">
+        <p class="side-h">Education</p>
+        <div class="edu-item">
+          <p class="deg">Bachelor of Science<br>Information Technology</p>
+          <p class="sch">North-West University</p>
+          <p class="yr">2024 — Present</p>
+        </div>
+        <div class="edu-item">
+          <p class="deg">National Senior Certificate</p>
+          <p class="sch">Afrikaans Home Language, English FAL, Mathematics, IT, History, Physical Sciences, Alpha Mathematics</p>
+          <span class="gpa-tag">GPA 86%</span>
+        </div>
+      </div>
+
+      <div class="side-block" id="skills">
+        <p class="side-h">Technical Skills</p>
+        <div class="skill-tags">
+          <span>Python</span><span>C#</span><span>C++</span><span>Java</span>
+          <span>SQL</span><span>Delphi</span><span>MySQL</span><span>Oracle</span>
+          <span>Git &amp; GitHub</span><span>Angular</span><span>.NET MAUI</span><span>Blazor</span>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <p class="side-h">Soft Skills</p>
+        <ul class="soft-tags">
+          <li>Communication</li>
+          <li>Teamwork</li>
+          <li>Organized</li>
+          <li>Creative</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <p class="kicker">Information Technology Student</p>
+      <h1>Clara van Biljon</h1>
+      <p class="lede">Detail-oriented third-year IT student at NWU with a passion for design and organization. Highly adaptable, with hands-on experience leading and working in teams to build systems that solve real-world problems.</p>
+
+      <section id="experience">
+        <div class="sec-head">
+          <h2>Experience</h2>
+          <div class="sec-rule"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <p class="tl-date">February 2025 — Present</p>
+            <p class="tl-role">Student Assistant</p>
+            <p class="tl-org">North-West University</p>
+            <ul>
+              <li>Tutor students and grade assignments</li>
+              <li>Modules: Introduction to Programming (CMPG111), User Interface Programming (CMPG122), Apps and Advanced User Interface Programming (CMPG212)</li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <p class="tl-date">February 2026</p>
+            <p class="tl-role">Student Vacation Worker — SkillsForm</p>
+            <p class="tl-org">Gendac | Software, Innovations &amp; IoT</p>
+            <ul>
+              <li>Collaborated on the frontend of SkillsForm, a web platform bridging high school students to career skills and jobs</li>
+            </ul>
+            <div class="tl-tags"><span>Angular</span><span>HTML</span><span>CSS</span><span>Graphic Design</span></div>
+          </div>
+
+          <div class="tl-item">
+            <p class="tl-date">February 2025</p>
+            <p class="tl-role">Student Vacation Worker — PAS</p>
+            <p class="tl-org">Gendac | Software, Innovations &amp; IoT</p>
+            <ul>
+              <li>Worked on the frontend of a potential awareness system (PAS)</li>
+            </ul>
+            <div class="tl-tags"><span>.NET MAUI</span><span>Blazor</span><span>OpenStreetMap</span><span>JavaScript</span><span>C#</span></div>
+          </div>
+
+          <div class="tl-item">
+            <p class="tl-date">August 2019 — January 2024</p>
+            <p class="tl-role">Part-time Café Server</p>
+            <p class="tl-org">Heavenly Coffees</p>
+            <ul>
+              <li>Prepared food and drinks to serve customers</li>
+              <li>Handled payments and customer service</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note-card">
+          <strong>Also on record:</strong> migrated patient files to a new information system, plus sales and customer service experience across several companies.
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-cta">
+          <h2>Let's build something.</h2>
+          <p>Open to opportunities in frontend development, UI design, and IT — reach out through any of the channels below, or grab a copy of my CV.</p>
+          <div class="cta-links">
+            <a href="mailto:claravanbiljon@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+              Email
+            </a>
+            <a href="tel:+27843024054">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2z"/></svg>
+              Call
+            </a>
+            <a href="https://github.com/ClaraIvB" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.9-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="Clara_van_Biljon_CV.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <p class="page-footer">Centurion, Pretoria · built &amp; maintained by Clara van Biljon</p>
+
+</body>
+</html>
